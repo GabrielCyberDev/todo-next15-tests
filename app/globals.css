@@ -1,49 +1,122 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+body{
+font-family:Inter,Arial,sans-serif;
+background:linear-gradient(135deg,#0f172a,#1e293b,#334155);
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:40px;
+color:#fff;
 }
 
-html {
-  height: 100%;
+.container{
+width:100%;
+max-width:720px;
+background:white;
+color:#222;
+border-radius:18px;
+padding:40px;
+box-shadow:0 20px 60px rgba(0,0,0,.25);
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+h1{
+text-align:center;
+font-size:2rem;
+margin-bottom:10px;
 }
 
-body {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.subtitulo{
+text-align:center;
+color:#666;
+margin-bottom:30px;
+line-height:1.5;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+.form{
+display:flex;
+flex-direction:column;
+gap:14px;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.input{
+padding:14px;
+font-size:16px;
+border:2px solid #ddd;
+border-radius:10px;
+transition:.3s;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+.input:focus{
+outline:none;
+border-color:#2563eb;
+box-shadow:0 0 10px rgba(37,99,235,.3);
+}
+
+.botao{
+padding:14px;
+background:#2563eb;
+border:none;
+color:white;
+font-size:16px;
+font-weight:bold;
+border-radius:10px;
+cursor:pointer;
+transition:.3s;
+}
+
+.botao:hover{
+background:#1d4ed8;
+transform:translateY(-2px);
+}
+
+.erro{
+color:#dc2626;
+font-weight:600;
+}
+
+.contador{
+margin:30px 0;
+padding:18px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:#eff6ff;
+border-radius:12px;
+font-size:18px;
+font-weight:bold;
+}
+
+.contador strong{
+background:#2563eb;
+color:white;
+padding:8px 18px;
+border-radius:30px;
+}
+
+.lista{
+list-style:none;
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.card{
+background:#f8fafc;
+padding:18px;
+border-left:6px solid #2563eb;
+border-radius:10px;
+font-size:17px;
+transition:.3s;
+box-shadow:0 4px 10px rgba(0,0,0,.08);
+}
+
+.card:hover{
+transform:translateX(6px);
+background:#eef4ff;
 }

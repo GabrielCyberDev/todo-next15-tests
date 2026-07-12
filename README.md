@@ -1,36 +1,96 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📋 Task Manager - Next.js 15
 
-## Getting Started
+Uma aplicação simples de gerenciamento de tarefas desenvolvida com **Next.js 15**, **TypeScript**, **Jest** e **React Testing Library**.
 
-First, run the development server:
+O projeto foi criado com foco na prática de conceitos fundamentais do App Router, Server Components, Client Components, Hooks personalizados e testes unitários.
+
+---
+
+## 🚀 Tecnologias
+
+- Next.js 15
+- React 19
+- TypeScript
+- Jest
+- React Testing Library
+
+---
+
+## 📁 Estrutura do Projeto
+
+```
+app/
+components/
+hooks/
+lib/
+tests/
+```
+
+---
+
+## ✨ Funcionalidades
+
+- Listagem de tarefas carregadas por um Server Component.
+- Adição de novas tarefas através de formulário controlado.
+- Hook personalizado para contagem de tarefas.
+- Interface moderna e responsiva.
+- Testes unitários para componentes, hook e renderização da página.
+
+---
+
+## 🧪 Testes
+
+Os testes cobrem os principais fluxos da aplicação:
+
+- Renderização do componente de criação de tarefas.
+- Validação do formulário.
+- Submissão de novas tarefas.
+- Funcionamento do hook personalizado.
+- Renderização da lista de tarefas.
+
+Para executar:
+
+```bash
+npm test
+```
+
+---
+
+## ▶️ Executando o projeto
+
+Instale as dependências:
+
+```bash
+npm install
+```
+
+Inicie o servidor de desenvolvimento:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+A aplicação ficará disponível em:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 📚 Objetivo
 
-To learn more about Next.js, take a look at the following resources:
+Este projeto foi desenvolvido para praticar os conceitos de:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Server Components
+- Client Components
+- Hooks personalizados
+- Testes unitários com Jest
+- React Testing Library
+- Organização de projetos em Next.js 15
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 👨‍💻 Autor
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Desenvolvido por **Gabriel Costa**.
