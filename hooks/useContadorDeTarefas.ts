@@ -2,8 +2,8 @@
 
 import { useMemo } from "react";
 
-export default function useContadorDeTarefas(total: number) {
-  const quantidade = useMemo(() => total, [total]);
-
-  return quantidade;
+export default function useContadorDeTarefas(
+  tarefas: { id: number; titulo: string }[]
+) {
+  return useMemo(() => tarefas.length, [tarefas]);
 }

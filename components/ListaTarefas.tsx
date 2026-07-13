@@ -26,7 +26,7 @@ export default function ListaTarefas({
   }
 
   const quantidade =
-    useContadorDeTarefas(tarefas.length);
+  useContadorDeTarefas(tarefas);
 
   return (
     <>

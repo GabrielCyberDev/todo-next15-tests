@@ -1,8 +1,8 @@
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import ListaTarefas from "@/components/ListaTarefas";
 
 describe("Página", () => {
-  test("renderiza tarefas", () => {
+  function renderizar() {
     render(
       <ListaTarefas
         tarefasIniciais={[
@@ -17,17 +17,78 @@ describe("Página", () => {
         ]}
       />
     );
+  }
+
+  test("renderiza tarefas iniciais", () => {
+    renderizar();
 
     expect(
-      screen.getByText((content) => content.includes("Item 1"))
+      screen.getByText((text) => text.includes("Item 1"))
     ).toBeInTheDocument();
 
     expect(
-      screen.getByText((content) => content.includes("Item 2"))
+      screen.getByText((text) => text.includes("Item 2"))
     ).toBeInTheDocument();
-
-    expect(
-      screen.getByTestId("contador")
-    ).toHaveTextContent("2");
   });
-});
+
+  test("contador inicia com duas tarefas", () => {
+    renderizar();
+
+    expect(screen.getByTestId("contador")).toHaveTextContent("2");
+  });
+
+  test("adiciona uma nova tarefa", () => {
+    renderizar();
+
+    fireEvent.change(screen.getByTestId("input"), {
+      target: {
+        value: "Nova tarefa",
+      },
+    });
+
+    fireEvent.click(screen.getByTestId("botao"));
+
+    expect(
+      screen.getByText((text) => text.includes("Nova tarefa"))
+    ).toBeInTheDocument();
+  });
+
+  test("contador aumenta após adicionar tarefa", () => {
+    renderizar();
+
+    fireEvent.change(screen.getByTestId("input"), {
+      target: {
+        value: "Nova tarefa",
+      },
+    });
+
+    fireEvent.click(screen.getByTestId("botao"));
+
+    expect(screen.getByTestId("contador")).toHaveTextContent("3");
+  });
+
+  test("mantém tarefas existentes após adicionar", () => {
+    renderizar();
+
+    fireEvent.change(screen.getByTestId("input"), {
+      target: {
+        value: "Terceira",
+      },
+    });
+
+    fireEvent.click(screen.getByTestId("botao"));
+
+    expect(
+      screen.getByText((text) => text.includes("Item 1"))
+    ).toBeInTheDocument();
+
+    expect(
+      screen.getByText((text) => text.includes("Item 2"))
+    ).toBeInTheDocument();
+
+    expect(
+      screen.getByText((text) => text.includes("Terceira"))
+    ).toBeInTheDocument();
+  });
+}
+);

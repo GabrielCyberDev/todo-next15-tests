@@ -38,22 +38,26 @@ tests/
 
 ---
 
-## 🧪 Testes
+## Como rodar os testes
 
-Os testes cobrem os principais fluxos da aplicação:
-
-- Renderização do componente de criação de tarefas.
-- Validação do formulário.
-- Submissão de novas tarefas.
-- Funcionamento do hook personalizado.
-- Renderização da lista de tarefas.
-
-Para executar:
+Execute:
 
 ```bash
 npm test
 ```
 
+A suíte utiliza:
+
+- Jest
+- React Testing Library
+
+Os testes cobrem:
+
+- Renderização dos componentes;
+- Validação do formulário;
+- Adição de tarefas;
+- Atualização do contador;
+- Hook personalizado.
 ---
 
 ## ▶️ Executando o projeto
